@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1>Quara posts</h1> 
+</br>
+</br>
+
+<%for(post of posts){%>
+    <div class="post">
+    <p class="user">@<%=post.username%></p>
+    <p><%=post.content%></p>
+    <br>
+    <a href="http://localhost:8080/posts/<%=post.id%>">see in detail</a>
+    <a href="http://localhost:8080/posts/<%=post.id%>/edit">edit</a>
+   <form method="post" action="http://localhost:8080/posts/<%=post.id%>?_method=DELETE">
+    <BUTTON>DELETE </BUTTON>
+   </form>
+</div>
+    <%}%>
+    <br>
+<a href="http://localhost:8080/posts/newpost">add new post</a>
+
+</body>
+</html>
